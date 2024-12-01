@@ -1,0 +1,40 @@
+// Hesap makinesi
+// https://play.motoko.org/?tag=284882977
+
+// Hesap makinesi adında bir akıllı sözleşme oluştur
+actor hesap_makinesi {
+    // hucre adında bir tam sayı değişkeni oluştur ve 0 ile başlat
+    var hucre: Int = 0;
+
+    // Toplama işlemi yapan bir fonksiyon
+    public func toplama(s: Int): async Int {
+        // Gelen sayıyı hucre değişkenine ekle ve yeni değeri döndür
+        hucre += s;
+        return hucre;
+    };
+
+    // Çıkarma işlemi yapan bir fonksiyon
+    public func cikarma(s: Int): async Int {
+        hucre -= s;
+        return hucre  
+    };
+    // Çarpma işlemi yapan bir fonksiyon
+    public func carpma(s: Int): async Int {
+        hucre *= s;
+        return hucre
+    };
+    // Bölme işlemi yapan bir fonksiyon
+    public func bolme(s: Int): async ?Int {
+        if (s == 0) {
+            null
+        }else{
+            hucre /= s;
+            ?hucre
+        };
+    };
+
+    // Temizleme kodu
+    public func temizle() : async () {
+    return hucre := 0;
+    };
+};
