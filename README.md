@@ -1,1 +1,1 @@
-# Calculater-with-Motoko
+# Calculator-with-Motoko
